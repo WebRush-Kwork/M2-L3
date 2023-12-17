@@ -72,4 +72,22 @@ def change(message):
         bot.reply_to(message, 'Вы еще не создали себе покемона! 🫢')
 
 
+@bot.message_handler(commands=['compare'])
+def compare(message):
+    if message.reply_to_message:
+        pokemon1 = Pokemon.pokemons[message.from_user.username]
+        pokemon2 = Pokemon.pokemons[message.reply_to_message.from_user.username]
+        if pokemon1 > pokemon2:
+            bot.send_message(
+                message.chat.id, 'Кол-во hp первого покемона больше, чем второго покемона 😮‍💨')
+        elif pokemon1 < pokemon2:
+            bot.send_message(
+                message.chat.id, 'Кол-во hp второго покемона больше, чем первого покемона 👻')
+        else:
+            bot.send_message(message.chat.id, 'Кол-во hp покемонов равны! 😳')
+    else:
+        bot.send_message(
+            message.chat.id, "Вы не ответили на чье-либо сообщение! 📝")
+
+
 bot.infinity_polling(none_stop=True)
