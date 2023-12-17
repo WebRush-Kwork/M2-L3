@@ -1,3 +1,3 @@
 Скриншоты, которые подтверждают того, что функция compare полностью рабочая
-![первое фото](M2-L3/images/Screenshot 2023-12-17 at 21.19.04.png)
-![второе фото](M2-L3/images/Screenshot 2023-12-17 at 21.19.18.png)
+![первое фото](https://raw.githubusercontent.com/WebRush-Kwork/M2-L3/new_branch/images/1.png)
+![второе фото](https://raw.githubusercontent.com/WebRush-Kwork/M2-L3/new_branch/images/2.png)
