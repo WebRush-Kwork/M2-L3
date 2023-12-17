@@ -20,6 +20,18 @@ class Pokemon:
         print(
             f'Добавлен покемон для пользователя {pokemon_trainer} в словарь Pokemon.pokemons')
 
+    def __lt__(self, other):
+        return self.hp < other.hp
+
+    def __gt__(self, other):
+        return self.hp > other.hp
+
+    def __eq__(self, other):
+        return self.hp == other.hp
+
+    def __str__(self):
+        return self.info()
+
     def get_name(self):
         url = f'https://pokeapi.co/api/v2/pokemon/{self.pokemon_number}'
         response = requests.get(url)
@@ -91,3 +103,17 @@ class Fighter(Pokemon):
 
     def info(self):
         return "У тебя покемон-боец 💪\n\n" + super().info()
+
+
+pokemon = Pokemon('user1')
+pokemon2 = Pokemon('user2')
+
+print(pokemon.info())
+print('____________________________\n')
+print(pokemon2.info())
+print('____________________________\n')
+print(pokemon < pokemon2)
+print(pokemon > pokemon2)
+print(pokemon == pokemon2)
+print('____________________________\n')
+print(pokemon)
